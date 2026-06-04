@@ -1,15 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My First Server</title>
   <style>
-    body { font-family: sans-serif; max-width: 600px; margin: 50px auto; }
-    h1 { color: #333; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #f5f7fa;
+      color: #333;
+    }
+
+    nav {
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      height: 60px;
+      position: sticky;
+      top: 0;
+    }
+
+    .nav-brand {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #4f46e5;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #555;
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 0.25rem 0;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #4f46e5;
+      border-bottom-color: #4f46e5;
+    }
+
+    main {
+      max-width: 680px;
+      margin: 80px auto;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+
+    main h1 {
+      font-size: 2.2rem;
+      color: #1a1a2e;
+      margin-bottom: 1rem;
+    }
+
+    main p {
+      color: #666;
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
   </style>
 </head>
 <body>
-  <h1>Welcome to My Server</h1>
-  <p>This page is being served by Node.js and Express.</p>
-  <p>I built this myself.</p>
+
+  <nav>
+    <a class="nav-brand" href="/">MyServer</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Welcome to My Server</h1>
+    <p>This page is being served by Node.js and Express.<br>Built from scratch.</p>
+  </main>
+
 </body>
 </html>
