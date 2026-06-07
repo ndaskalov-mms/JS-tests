@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 const port = 3000;
 
@@ -9,11 +10,11 @@ app.get('/', (req, res) => {
 });
 
 app.get('/about', (req, res) => {
-  res.send('This is the about page. I built this server myself!');
+  res.sendFile(path.join(__dirname, 'public', 'about.html'));
 });
 
 app.get('/contact', (req, res) => {
-  res.send('Contact me at: hello@mysite.com');
+  res.sendFile(path.join(__dirname, 'public', 'contact.html'));
 });
 
 app.get('/api/time', (req, res) => {
@@ -25,7 +26,7 @@ app.get('/api/time', (req, res) => {
 
 app.get('/api/greeting', (req, res) => {
     const name = req.query.name || 'Sara?';
-    if(name.toLowerCase() == 'sara') {
+    if(name.toLowerCase() === 'sara') {
         res.send(`Welcome, ${name}!`);
     } else {
         res.send(`Hello, ${name}!`);
